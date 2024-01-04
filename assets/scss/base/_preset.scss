@@ -1,0 +1,127 @@
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+.container{
+  margin-left: 2.08vw;
+  margin-right: 2.08vw;
+
+  @include mobile{
+    margin-left: 5.3vw;
+    margin-right: 5.3vw;
+  }
+}
+
+.grid{
+  align-items: flex-start;
+  display: grid;
+  grid-column-gap: 1.38vw;
+  grid-template-columns: repeat(16, 1fr);
+
+  @include mobile{
+    grid-column-gap: 5.3vw;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.text{
+  font-family: "NeueHaasGroteskText Pro";
+  font-size: 1.1vw;
+  font-weight: 400;
+  line-height: 1.6vw;
+}
+
+.button {
+  border-radius: 2.9vw;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  white-space: nowrap;
+
+  @include mobile{
+    border-radius: 11.2vw;
+  }
+
+  &.is-light{
+    border: 1px solid rgba(30,29,28,.2);
+    color: #1e1d1c;
+
+    .inner:nth-child(2){
+      background: #1e1d1c;
+      color: #fff;
+    }
+  }
+
+  &.is-transparent{
+    border: 1px solid hsla(0,0%,100%,.4);
+    color: #fff;
+
+    .inner:nth-child(2){
+      background: #fff;
+      color: #1e1d1c;
+      border: 1px solid #fff;
+    }
+  }
+
+  &:hover .inner:first-child{
+    transform: translateY(-50%);
+    color: transparent;
+  }
+  &:hover .inner:nth-child(2){
+    transform: translateY(-100%);
+  }
+  
+  .inner {
+    border-radius: 2.9vw;
+    height: 2.9vw;
+    padding: 0 1.6vw;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    @include mobile{
+      border-radius: 2.9166666667vw;
+      height: 11.2vw;
+      overflow: hidden;
+      padding: 0 6.4vw;
+      position: relative;
+    }
+    
+    .label{
+      align-items: center;
+      display: flex;
+      font-family: "NeueHaasGroteskText Pro";
+      font-size: 1vw;
+      font-weight: 400;
+      height: 100%;
+      justify-content: center;
+      line-height: 1.6vw;
+
+      @include mobile{
+        font-size: 3.7vw;
+        line-height: 5.3vw;
+      }
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 100%;
+    }
+  }
+}
+
+.oh{
+  overflow: hidden;
+}
+
+.mo{
+  display: none;
+
+  @include mobile{
+    display: block;
+  }
+}

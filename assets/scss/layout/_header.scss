@@ -1,0 +1,448 @@
+.header {
+  position: fixed;
+  height: 2.9vw;
+  left: 2vw;
+  right: 2vw;
+  top: 2vw;
+  z-index: 20;
+  pointer-events: none;
+
+  &.is-menu{
+    .logo svg{
+      @include mobile{
+        color: #fff;
+      }
+    }
+  }
+
+  @include mobile {
+    left: 5.3vw;
+    right: 5.3vw;
+    top: 4.5vw;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 12vw;
+  }
+
+  .logo {
+    left: 0;
+    position: absolute;
+    height: 2vw;
+    top: 0;
+    width: 7vw;
+    pointer-events: all;
+    display: inline-block;
+
+    @include mobile {
+      width: 28.5vw;
+      position: static;
+      height: auto;
+    }
+
+    svg {
+      color: $black;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .burger {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: all;
+
+    @include mobile {
+      position: static;
+    }
+
+    .label {
+      color: $black;
+      position: absolute;
+      transition: color 0.3s;
+      font-family: "NeueHaasGroteskText Pro";
+      font-size: 1vw;
+      font-weight: 400;
+      line-height: 0.9vw;
+      right: 3.8vw;
+      overflow: hidden;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .icon {
+      height: 2.9vw;
+      width: 2.9vw;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      @include mobile {
+        width: 13.3vw;
+        height: 13.3vw;
+      }
+
+      .shape {
+        background: #060606;
+        background: $black;
+        border: 1px solid #373737;
+        border-radius: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(0.9);
+        }
+      }
+
+      .lines {
+        .line {
+          background: #fff;
+          height: 1px;
+          margin: 0.5vw 0;
+          transition: all 0.3s;
+          width: 3.7vw;
+          will-change: transform;
+          margin: 0.1vw 0;
+          width: 0.9vw;
+
+          @include mobile {
+            width: 3.7vw;
+            margin: 0.5vw 0;
+          }
+        }
+      }
+    }
+
+    &.is-menu {
+      .shape {
+        background: #fff;
+        border-color: #fff;
+      }
+
+      .line {
+        background: #060606 !important;
+
+        &:first-child {
+          transform: translate(0px, 3.072px) rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:nth-child(3) {
+          transform: translate(0px, -3.072px) rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  &.is-light .burger {
+    .shape {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    .line {
+      background: #060606 !important;
+    }
+  }
+}
+
+.chapter {
+  position: fixed;
+  bottom: 2.1vw;
+  left: 2.1vw;
+  top: 2.1vw;
+  transition: color 0.3s;
+  width: 1.4vw;
+  z-index: 10;
+
+  @include mobile {
+    background: #fff;
+    height: 20.5vw;
+    left: 0;
+    padding: 4.8vw 16vw;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .container {
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+
+    @include mobile {
+      align-items: flex-end;
+      display: flex;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+      justify-content: flex-start;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    font-family: "NeueHaasGroteskText Pro";
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 0.9vw;
+    transform: rotate(-180deg);
+    white-space: nowrap;
+    width: 1.4vw;
+    writing-mode: vertical-rl;
+
+    &.current {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      writing-mode: inherit;
+      transform: rotate(0deg);
+      font-size: 3.7vw;
+      line-height: 5.3vw;
+      width: 5vw;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+    }
+
+    .digit {
+      color: rgba(30, 29, 28, 0.4);
+      margin-bottom: 0.7vw;
+      transition: color 0.3s;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.menu {
+  background: #060606;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  .container {
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .column {
+    &:first-child {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 43.1vw;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      align-items: center;
+      bottom: 0;
+      display: flex;
+      left: 43.1vw;
+      padding: 0 7.5vw;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include mobile {
+        display: flex;
+        padding-top: 37.3vw;
+        position: static;
+        align-items: flex-end;
+      }
+    }
+
+    .video {
+      opacity: 0.8;
+    }
+  }
+
+  .row {
+    display: flex;
+
+    @include mobile{
+      flex-direction: column;
+      gap: 9vw;
+    }
+
+    .menu-main {
+      width: 30.5vw;
+
+      @include mobile{
+        width: 100%;
+      }
+
+      .item {
+        overflow: hidden;
+
+        .link {
+          display: inline-block;
+          font-family: "PolySans Slim";
+          font-size: 4.4vw;
+          font-weight: 300;
+          line-height: 4.4vw;
+          will-change: transform;
+          position: relative;
+          height: 5vw;
+
+          @include mobile{
+            font-size: 12.8vw;
+            height: 12.5vw;
+            letter-spacing: -.32vw;
+            line-height: 8vw;
+            margin-bottom: 2.7vw;
+            text-indent: -.8vw;
+            white-space: nowrap;
+          }
+
+          &::after {
+            background: currentColor;
+            bottom: 1px;
+            content: "";
+            height: 0.2vw;
+            left: 0;
+            position: absolute;
+            transform: scaleX(0);
+            transform-origin: right center;
+            transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+            width: 100%;
+
+            @include mobile{
+              bottom: 0;
+              height: 0.7vw;;
+            }
+          }
+
+          &:not(.is-active):hover::after {
+            transform: scaleX(1);
+            transform-origin: left center;
+          }
+
+          &.is-active {
+            pointer-events: none;
+          }
+
+          &.is-current::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+
+    .menu-services {
+      margin-top: auto;
+      width: 11.25vw;
+
+      @include mobile{
+        width: 100%;
+      }
+
+      .item {
+        margin: 0.34vw 0;
+        overflow: hidden;
+
+        .link {
+          display: inline-block;
+          font-family: "Ivar Text";
+          font-size: 1.6vw;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 2.2vw;
+
+          @include mobile{
+            font-size: 5.3vw;
+            line-height: 9.3vw;
+          }
+        }
+      }
+    }
+
+    .button {
+      position: absolute;
+      right: 5.76vw;
+      top: 2.08vw;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .language {
+      bottom: 3.47vw;
+      position: absolute;
+      left: 7.5vw;
+
+      @include mobile{
+        position: static;
+      }
+    }
+
+    .sub {
+      color: hsla(0, 0%, 100%, 0.6);
+      font-family: "NeueHaasGroteskText Pro";
+      font-size: 1.1vw;
+      font-weight: 400;
+      line-height: 1.6vw;
+      position: relative;
+
+      @include mobile{
+        font-size: 4.2vw;
+        line-height: 6.4vw;
+        white-space: nowrap;
+      }
+    }
+
+    .contact {
+      bottom: 3.47vw;
+      position: absolute;
+      left: 38vw;
+
+      @include mobile{
+        position: static;
+      }
+    }
+  }
+}

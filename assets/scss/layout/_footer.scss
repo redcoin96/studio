@@ -1,0 +1,200 @@
+.footer {
+  background: #1e1d1c;
+  color: #f2ede4;
+  overflow: hidden;
+  padding: 11.1vw 0 0;
+
+  .top {
+    overflow: hidden;
+    display: flex;
+    padding-bottom: 6.25vw;
+
+    @include mobile {
+      padding-bottom: 21.3vw;
+    }
+
+    .marquee {
+      display: flex;
+      animation: marquee 30s infinite linear;
+
+      ul {
+        display: flex;
+        white-space: nowrap;
+      }
+
+      .marquee-item {
+        font-family: "PolySans Slim";
+        font-size: 13.8vw;
+        font-weight: 300;
+        line-height: 13.8vw;
+        margin-left: 2.08vw;
+
+        @include mobile {
+          font-size: 32vw;
+          line-height: 32vw;
+          margin-left: 8vw;
+        }
+      }
+    }
+  }
+
+  .center {
+    .contact {
+      display: flex;
+      grid-column: 4/9;
+      margin-bottom: 5.48vw;
+
+      @include mobile {
+        display: flex;
+        grid-column: 1/7;
+        margin-bottom: 24.5vw;
+        order: 1;
+      }
+
+      img {
+        height: 4.72vw;
+        width: 4.72vw;
+        border-radius: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        @include mobile {
+          height: 13.3vw;
+          width: 13.3vw;
+        }
+      }
+
+      .details {
+        margin-left: 1.38vw;
+
+        @include mobile {
+          margin-left: 5.3vw;
+        }
+
+        .head {
+          font-family: "NeueHaasGroteskText Pro";
+          font-size: 1.1vw;
+          font-weight: 400;
+          line-height: 1.6vw;
+
+          @include mobile {
+            font-size: 4.2vw;
+            line-height: 6.4vw;
+          }
+
+          .name {
+            color: #fff;
+          }
+
+          .role {
+            color: hsla(0, 0%, 100%, 0.4);
+          }
+        }
+
+        .quote {
+          margin: 1.94vw 0;
+          font-family: "Ivar Text";
+          font-size: 1.6vw;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 2.2vw;
+
+          @include mobile {
+            font-size: 5.3vw;
+            line-height: 6.4vw;
+            margin: 7.2vw 0 6.4vw;
+          }
+        }
+      }
+    }
+
+    .socials {
+      grid-column: 11/14;
+      grid-row-start: 2;
+
+      @include mobile {
+        grid-column: 5/7;
+        order: 3;
+      }
+    }
+
+    .info {
+      grid-column: 14/17;
+      grid-row-start: 2;
+
+      @include mobile {
+        grid-column: 1/4;
+        order: 2;
+      }
+    }
+
+    .item {
+      color: hsla(0, 0%, 100%, 0.6);
+      padding: 0.27vw 0;
+
+      @include mobile {
+        font-family: "NeueHaasGroteskText Pro";
+        font-size: 3.7vw;
+        font-weight: 400;
+        line-height: 5.3vw;
+        padding: 1vw 0;
+      }
+    }
+  }
+
+  .bottom {
+    border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+    margin-top: 3vw;
+    padding: 1.6vw 0 2.43vw;
+
+    @include mobile {
+      margin-top: 24.5vw;
+      padding: 6.4vw 0 9.3vw;
+    }
+
+    .item {
+      color: hsla(0, 0%, 100%, 0.4);
+      padding: 0.27vw 0;
+
+      @include mobile{
+        font-family: "NeueHaasGroteskText Pro";
+        font-size: 3.7vw;
+        font-weight: 400;
+        line-height: 5.3vw;
+        padding: 1vw 0;
+      }
+
+      &:first-child {
+        grid-column: 2/4;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        grid-column: 5/7;
+
+        @include mobile {
+          grid-column: 1/5;
+        }
+      }
+
+      &:nth-child(3) {
+        grid-column: 11/13;
+
+        @include mobile {
+          grid-column: 5/7;
+        }
+      }
+
+      &:nth-child(4) {
+        grid-column: 14/17;
+
+        @include mobile {
+          grid-column: 1/5;
+        }
+      }
+    }
+  }
+}
